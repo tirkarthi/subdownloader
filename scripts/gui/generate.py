@@ -84,10 +84,10 @@ def generate(command='run', import_from=default_import_from, dry=False, targets=
         log.error('Fatal error: {}'.format(' '.join('"{}"'.format(e.source) for e in errors)))
         sys.exit(1)
 
-    if command is 'run':
+    if command == 'run':
         for to_run in outdated:
             to_run.run(dry)
-    elif command is 'clean':
+    elif command == 'clean':
         for action in actions:
             action.clean(dry)
     else:

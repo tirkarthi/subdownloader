@@ -63,5 +63,5 @@ class UiFile(object):
 
     @classmethod
     def fix_translations(cls, text):
-        new_string, _ = re.subn(b'_translate\(".*?",\s(".*?")\s*?\)', b'_(\g<1>)', text)
+        new_string, _ = re.subn(br'_translate\(".*?",\s(".*?")\s*?\)', br'_(\g<1>)', text)
         return new_string

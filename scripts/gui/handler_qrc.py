@@ -75,7 +75,7 @@ class QrcFile(object):
 
     @classmethod
     def fix_import(cls, text):
-        new_string, nb = re.subn(b'\n(qInitResources\(\))', b'\n# \g<1>', text)
+        new_string, nb = re.subn(b'\n(qInitResources\\(\\))', b'\n# \\g<1>', text)
         log.debug('fix_import replaced {} occurrences'.format(nb))
         if nb != 1:
             log.error('fix_import replaced wrong number of occurrences!')
